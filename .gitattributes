@@ -1,0 +1,5 @@
+*.csv filter=lfs diff=lfs merge=lfs -text
+*.db filter=lfs diff=lfs merge=lfs -text
+cl_citations.csv filter=lfs diff=lfs merge=lfs -text
+cl_citations2.csv filter=lfs diff=lfs merge=lfs -text
+cases.db filter=lfs diff=lfs merge=lfs -text

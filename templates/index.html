@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link href="/static/styles.css" rel="stylesheet">
+        <script src='/static/main.js'></script>
+        <title>Citation Map</title>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Supreme Court Citation Lookup</h1>
+        </div>
+        <div class="container">
+            <div class="section">
+
+                <h2>Case Name</h2>
+                <form action="/search_results" method="get">
+                    <input name="name" type="text", placeholder="Plessy v. Ferguson", required>
+                    <button type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+        <!--<div id="cy"></div>-->
+
+    </body>
+</html>
