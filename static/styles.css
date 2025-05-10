@@ -1,3 +1,8 @@
+/* Various boring formating things (I'm bad at formatting and styling, 
+so I didn't spend much time on this, relatively speaking)*/
+
+/*Key for allowing the graph to render correctly (Cytoscape has finicky rendering
+requiremenst)*/
 html, body {
   height: 100%;
   overflow: hidden;
@@ -12,6 +17,7 @@ main {
     position: relative;
 }
 
+/*Inspired (and some code taken) from the finance PSet*/
 .navbar {
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
@@ -62,12 +68,14 @@ main {
     transition: color 2s ease-in-out, background-color 0.15s ease-in-out;
 }
 
+/*Allows the cytoscape graph to render!*/
 #cy {
     width: 100%;
     height: 100%;
     position: relative;
 }
 
+/*For the error pop-up*/
 .modal {
   position: fixed;
   top: 0; left: 0;
@@ -88,6 +96,7 @@ main {
   max-width: 400px;
 }
 
+/*For when an error is thrown*/
 .close-button {
   position: absolute;
   top: 5px; right: 10px;
@@ -95,6 +104,7 @@ main {
   cursor: pointer;
 }
 
+/*Baseline is that the graph is hidden until Javascript says otherwise*/
 #cy.hidden {
   visibility: hidden;
 }
