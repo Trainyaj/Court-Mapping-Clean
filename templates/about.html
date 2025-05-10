@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block page_title %}Supreme Court Citation Lookup Credits{% endblock %}
+
+{% block head_extra %}
+<div></div>
+{% endblock %}
+
+{% block content %}
+
+<div class="container mt-5">
+    <div class="card shadow p-4">
+        <div class="card-body">
+            <h1 class="mb-4">About the Supreme Court Citation Lookup</h1>
+
+            <p class="card-text">
+                Welcome to the Supreme Court Citation Lookup! Using this tool, you can look up Supreme Court 
+                cases by name and build citation network graphs.
+            </p>
+
+            <p class="card-text">
+                <strong>Be warned:</strong> the search tool is relatively sensitive to 
+                variations in case, spelling, punctuation, and abbrivation, and will often fail to find a case
+                if the case name is entered incorrectly.
+            </p>
+
+            <p class="card-text">
+                <strong>Also be warned:</strong> the citation database I am using is incomplete, 
+                so many citations will be missing (see 
+                <a href="/credits">Credits</a> for more details). Some nodes (cases) will be blank. This is because
+                they don't have names in the database I'm using. Sorry! The citation database also often has several
+                different cases named the same (for example, there are two "Brown v. Board of Education"'s'), usually
+                representing different administative steps in the case (for example, Brown 1954 vs. Brown 1955).
+            </p>
+
+             <p class="card-text">
+                After you build a citation network around a given case (denoted in green), 
+                click on one of the surrounding cases, 
+                and the citation network will grow around that case!
+            </p>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

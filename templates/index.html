@@ -1,27 +1,50 @@
-<!DOCTYPE html>
+{% extends 'base.html' %}
 
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <link href="/static/styles.css" rel="stylesheet">
-        <script src="/static/cytoscape.js"></script>
-        <title>Citation Map</title>
-    </head>
-    <body>
-        <div class="header">
-            <h1>Supreme Court Citation Lookup</h1>
-        </div>
-        <div class="container">
-            <div class="section">
+{% block page_title %}Supreme Court Citation Lookup{% endblock %}
 
-                <h2>Case Name</h2>
-                <form action="/search_results" method="get">
-                    <input name="name" type="text" placeholder="Plessy v. Ferguson" required>
-                    <button type="submit">Search</button>
-                </form>
+{% block head_extra %} <script src="/static/main.js"></script>{% endblock %}
+
+
+{% block content %}
+<div class="container my-3">
+    <div class="card shadow-sm p-4">
+        <h2 class="text-center mb-3">Case Name</h2>
+        <form action="/search_results" method="get" class="d-flex justify-content-center gap-2">
+            <div class="col-auto">
+                <input 
+                id="case-search"
+                name="name" 
+                type="text" 
+                class="form-control" 
+                placeholder="Plessy v. Ferguson" 
+                required 
+                value="{{ request.args.get('name', '') }}">
             </div>
-        </div>
-        <!--<div id="cy"></div>-->
+            <div class="col-auto">
+                <button type="submit" class="btn btn-primary">Search</button>
+            </div>
+        </form>
+    </div>
+</div>
 
-    </body>
-</html>
+<div class="container d-flex justify-content-center">
+    <div class="w-100">
+        <div id="suggestion-box" class="card mt-3 shadow-sm" style="display: none;">
+            <div class="card-header bg-light">
+                <strong>Matching Cases</strong>
+            </div>
+            <ul id="suggestion-list" class="list-group list-group-flush mb-0"></ul>
+        </div>
+    </div>
+</div>
+
+{% if error %}
+    <div id="errorModal" class="modal" style="display:none;">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <p id="errorMessage">{{ error }}</p>
+        </div>
+    </div>
+{% endif %}
+
+{% endblock %}
