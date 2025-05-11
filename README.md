@@ -6,6 +6,7 @@ TLDR: My project creates a webpage (with Flask) which allows the user to search 
 
 Links:
 [My Video](https://youtu.be/jWtro4nir6w)
+GitHub [Repo](https://github.com/Trainyaj/Court-Mapping-Clean/tree/Court_Mapping_To_Submit) including cases.db (needed to actually run the code).
 
 
 Detailed Documentation: 
