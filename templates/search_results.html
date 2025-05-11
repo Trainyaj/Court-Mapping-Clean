@@ -1,0 +1,19 @@
+<!--Displays the citation graph and allows users to expand it-->
+{% extends 'base.html' %}
+
+{% block page_title %}Supreme Court Citation Lookup Results{% endblock %}
+
+{% block head_extra %}
+    <script src="/static/cytoscape.js"></script>
+{% endblock %}
+
+{% block content %}
+<div id="cy"></div>
+
+<!-- Embed the data as JSON in a script tag -->
+<script id="cy-data" type="application/json">
+    {{ elements|tojson }}
+</script>
+    <!-- Reads the above JSON and creates the graph -->
+<script src="{{ url_for('static', filename='search_results.js') }}"></script>
+{% endblock %}

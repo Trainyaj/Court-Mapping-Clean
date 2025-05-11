@@ -1,0 +1,52 @@
+<!--Homepage! Allows for searches and dipslays autocomplete results-->
+{% extends 'base.html' %}
+
+{% block page_title %}Supreme Court Citation Lookup{% endblock %}
+
+{% block head_extra %} <script src="/static/main.js"></script>{% endblock %}
+
+
+{% block content %}
+<div class="container my-3">
+    <div class="card shadow-sm p-4">
+        <h2 class="text-center mb-3">Case Name</h2>
+        <form action="/search_results" method="get" class="d-flex justify-content-center gap-2">
+            <div class="col-auto">
+                <input 
+                id="case-search"
+                autocomplete="off"
+                name="name" 
+                type="text" 
+                class="form-control" 
+                placeholder="Plessy v. Ferguson" 
+                required 
+                value="{{ request.args.get('name', '') }}">
+            </div>
+            <div class="col-auto">
+                <button type="submit" class="btn btn-primary">Search</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="container d-flex justify-content-center">
+    <div class="w-100">
+        <div id="suggestion-box" class="card mt-3 shadow-sm" style="display: none;">
+            <div class="card-header bg-light">
+                <strong>Matching Cases</strong>
+            </div>
+            <ul id="suggestion-list" class="list-group list-group-flush mb-0"></ul>
+        </div>
+    </div>
+</div>
+
+{% if error %}
+    <div id="errorModal" class="modal" style="display:none;">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <p id="errorMessage">{{ error }}</p>
+        </div>
+    </div>
+{% endif %}
+
+{% endblock %}

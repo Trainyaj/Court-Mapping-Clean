@@ -1,0 +1,110 @@
+/* Various boring formating things (I'm bad at formatting and styling, 
+so I didn't spend much time on this, relatively speaking)*/
+
+/*Key for allowing the graph to render correctly (Cytoscape has finicky rendering
+requiremenst)*/
+html, body {
+  height: 100%;
+  overflow: hidden;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+}
+
+/*Inspired (and some code taken) from the finance PSet*/
+.navbar {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #ef3e0d !important;
+}
+
+.navbar-nav .nav-link {
+    color: #fff !important;
+    padding: 0.5rem 1rem;
+}
+
+.header {
+    background-color: #4f7ff9;
+    color: #fff;
+    margin-bottom: 2rem;
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    text-align: center;
+    width: 90%;
+}
+
+.footer {
+    background-color: #989898;
+    color: #000000;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+.section {
+    padding-bottom: 1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 0.5rem;
+}
+
+.section:hover {
+    background-color: #f5f5f5;
+    transition: color 2s ease-in-out, background-color 0.15s ease-in-out;
+}
+
+/*Allows the cytoscape graph to render!*/
+#cy {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+/*For the error pop-up*/
+.modal {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(135, 47, 47, 0.1);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background: lightgrey;
+  padding: 1em 2em;
+  border-radius: 8px;
+  position: relative;
+  text-align: center;
+  max-width: 400px;
+}
+
+/*For when an error is thrown*/
+.close-button {
+  position: absolute;
+  top: 5px; right: 10px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/*Baseline is that the graph is hidden until Javascript says otherwise*/
+#cy.hidden {
+  visibility: hidden;
+}
